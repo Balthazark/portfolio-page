@@ -1,10 +1,40 @@
 @import "variables";
-.logo {
-  font-size: $font-size-spaced;
-  letter-spacing: $font-size-spaced;
-  font-weight: $font-weight-accent;
-  line-height: $line-height-accent;
+
+.primary-header{
+   align-items: center; 
+   justify-content: space-between;
 }
-.navlink {
-    margin-right: 20px;
+
+.primary-navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flex{
+    display: flex;
+    gap: 2em;
+}
+
+.logo{
+    margin-left: 6rem;
+    margin-top: 4rem;
+    font-weight: $font-weight-accent;
+    font-size: $font-size-spaced;
+    letter-spacing: $letter-spacing-accent;
+    text-transform: uppercase;
+    line-height: $line-height-accent;
+}
+    
+.nav-items {
+    margin-top: 3rem;
+    margin-right: 1em;
+    font-weight: $font-weight-accordion;
+    font-weight: $font-size-navbar;
+    text-transform: uppercase;
+}
+
+.icon{
+   vertical-align: middle; 
+    
 }
