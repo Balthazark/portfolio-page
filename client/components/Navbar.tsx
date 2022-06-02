@@ -1,6 +1,8 @@
 import React from "react";
-import { FaSun } from "react-icons/fa";
+import { FaSun, FaBars } from "react-icons/fa";
 import styles from "../styles/Navbar.module.scss";
+import {VisuallyHidden} from '@react-aria/visually-hidden'
+
 
 const Navbar = () => {
   return (
@@ -10,8 +12,19 @@ const Navbar = () => {
           Karl <br /> Gunnarsson
         </a>
       </span>
+      <button
+        className={styles["mobile-nav-toggle"]}
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+          <FaBars size={30}></FaBars>
+        <VisuallyHidden>Menu</VisuallyHidden>
+      </button>
       <nav>
-        <ul className={[styles["primary-navigation"], styles.flex].join(" ")}>
+        <ul
+          id="primary-navigation"
+          className={[styles["primary-navigation"], styles.flex].join(" ")}
+        >
           <li className={styles["nav-items"]}>
             <a href="#aboutme">About me</a>
           </li>
@@ -22,7 +35,9 @@ const Navbar = () => {
             <a href="#contactme">Contact me</a>
           </li>
           <li className={styles["nav-items"]}>
-            <a>Dark mode</a>
+            <span>
+              <FaSun size={30}></FaSun>
+            </span>
           </li>
         </ul>
       </nav>

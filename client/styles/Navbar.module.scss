@@ -3,9 +3,16 @@
 .primary-header{
    align-items: center; 
    justify-content: space-between;
+   background-color: $light-theme-accent;
+}
+
+.mobile-nav-toggle{
+    display: none;
 }
 
 .primary-navigation{
+    //This aligns icon
+    align-items: center;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -17,8 +24,7 @@
 }
 
 .logo{
-    margin-left: 6rem;
-    margin-top: 4rem;
+    margin: 2rem;
     font-weight: $font-weight-accent;
     font-size: $font-size-spaced;
     letter-spacing: $letter-spacing-accent;
@@ -34,7 +40,27 @@
     text-transform: uppercase;
 }
 
-.icon{
-   vertical-align: middle; 
+@media (max-width: 45em) {
+    .primary-navigation {
+        //gap:1em;
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+        background: hsl(0 0% 100% / 0.9);
+        flex-direction: column;
+        padding: min(10vh, 6rem) 2em;
+        transform: translateX(100%)
+    } 
     
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: 0;
+        //width: 1rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
 }
